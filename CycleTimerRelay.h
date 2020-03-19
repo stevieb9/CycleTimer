@@ -10,6 +10,7 @@ using namespace std;
 class CycleTimerRelay {
 
     private:
+        uint8_t _init           = false;
         uint8_t _reverseState   = false;
         uint8_t _on             = HIGH;
         uint8_t _off            = LOW;

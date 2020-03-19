@@ -35,7 +35,10 @@ void CycleTimerRelay::process () {
 
     // Turn the outlet on
 
-    if (_state == _off && currentMillis - _pMillis >= _offTime) {
+    if (_state == _off && currentMillis - _pMillis >= _offTime || ! _init) {
+        if (! _init) {
+            _init = true;
+        }
         _state = _on;
         _pMillis = currentMillis;
         digitalWrite(_pin, _on);

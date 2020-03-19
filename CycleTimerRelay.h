@@ -29,6 +29,12 @@ class CycleTimerRelay {
         /* Relay pin; On time; Off time; Reverse */
         CycleTimerRelay(uint8_t, unsigned long, unsigned long, uint8_t);
 
+        /* No relay pin */
+        CycleTimerRelay(unsigned long, unsigned long);
+
+        /* No relay pin with reverse */
+        CycleTimerRelay(unsigned long, unsigned long, uint8_t);
+
         void    process ();
         uint8_t state () { return _state; }
 
@@ -44,6 +50,8 @@ class CycleTimerRelay {
         unsigned long offTime () { return _offTime; }
         unsigned long offTime (unsigned long time) { _offTime = time; return _offTime; }
 
+        uint8_t pin () { return _pin; }
+        uint8_t pin (uint8_t pin) { _pin = pin; return _pin; }
 };
 
 #endif

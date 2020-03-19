@@ -1,12 +1,16 @@
 #include "CycleTimerRelay.h"
 
 // Normal constructor
-
 CycleTimerRelay ctr(2, 5000, 1000); // Pin, Start Millis, End Millis
 
 // On = LOW, Off = HIGH Constructor
-
 //CycleTimerRelay ctr(2, 5000, 1000, true); // Pin, Start Millis, End Millis, Reverse
+
+// No pin constructor
+//CycleTimerRelay ctr(5000, 1000); // Pin, Start Millis, End Millis
+
+// No pin constructor with reverse
+//CycleTimerRelay ctr(5000, 1000, true); // Start Millis, End Millis, Reverse
 
 void setup() {
     // Optionally set a name for the object

@@ -1,9 +1,9 @@
 #include "Arduino.h"
-#include "CycleTimer.h"
+#include "CycleTimerRelay.h"
 
 /* Default Constructor */
 
-CycleTimer::CycleTimer (uint8_t pin, unsigned long onTime, unsigned long offTime) {
+CycleTimerRelay::CycleTimerRelay (uint8_t pin, unsigned long onTime, unsigned long offTime) {
     _pin = pin;
     _onTime = onTime;
     _offTime = offTime;
@@ -11,7 +11,7 @@ CycleTimer::CycleTimer (uint8_t pin, unsigned long onTime, unsigned long offTime
 
 /* Reverse ON/OFF State Constructor */
 
-CycleTimer::CycleTimer (uint8_t pin, unsigned long onTime, unsigned long offTime, uint8_t reverseState) {
+CycleTimerRelay::CycleTimerRelay (uint8_t pin, unsigned long onTime, unsigned long offTime, uint8_t reverseState) {
     _pin = pin;
     _onTime = onTime;
     _offTime = offTime;
@@ -21,11 +21,11 @@ CycleTimer::CycleTimer (uint8_t pin, unsigned long onTime, unsigned long offTime
     _off = HIGH;
 }
 
-uint8_t CycleTimer::reverse () { 
+uint8_t CycleTimerRelay::reverse () { 
     return _reverseState;
 }
 
-void CycleTimer::process () {
+void CycleTimerRelay::process () {
 
     if (_pMillis == 0) {
         _pMillis = millis();

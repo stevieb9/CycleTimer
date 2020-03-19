@@ -1,23 +1,23 @@
-#include "CycleTimer.h"
+#include "CycleTimerRelay.h"
 
-CycleTimer ct(2, 5000, 1000); // Pin, Start Millis, End Millis
+CycleTimerRelay ctr(2, 5000, 1000); // Pin, Start Millis, End Millis
 
 void setup() {
     // Optionally set a name for the object
-    ct.name("CT");
+    ctr.name("CTR");
 }
 
 void loop() {
 
     // Signal the timer on each pass of loop()
-    ct.process();
+    ctr.process();
 
     // Check the current state of the pin
-    bool state = ct.state();
+    bool state = ctr.state();
 
     // Check if we're in reversed relay mode
-    bool reversed = ct.reverse();
+    bool reversed = ctr.reverse();
 
     // Get the name of the object
-    char* name = ct.name();
+    char* name = ctr.name();
 }

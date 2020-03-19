@@ -1,5 +1,5 @@
-#ifndef CYCLETIMER_H
-#define CYCLETIMER_H
+#ifndef CYCLETIMERRELAY_H
+#define CYCLETIMERRELAY_H
 
 #define DEBUG_TIMING true
 
@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class CycleTimer {
+class CycleTimerRelay {
 
     private:
         uint8_t _reverseState   = false;
@@ -23,10 +23,10 @@ class CycleTimer {
 
     public:
         /* Relay pin; On time; Off time */
-        CycleTimer(uint8_t, unsigned long, unsigned long);
+        CycleTimerRelay(uint8_t, unsigned long, unsigned long);
  
         /* Relay pin; On time; Off time; Reverse */
-        CycleTimer(uint8_t, unsigned long, unsigned long, uint8_t);
+        CycleTimerRelay(uint8_t, unsigned long, unsigned long, uint8_t);
 
         void    process ();
 //        uint8_t state () { return _reverseState ? _state : !_state; }

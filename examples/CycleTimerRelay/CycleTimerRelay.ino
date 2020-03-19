@@ -26,4 +26,12 @@ void loop() {
 
     // Get the name of the object
     char* name = ctr.name();
+
+    // Get and change the on or off times
+
+    unsigned long onTime  = ctr.onTime();
+    unsigned long offTime = ctr.offTime();
+
+    ctr.onTime(5000);
+    ctr.offTime(1000);
 }

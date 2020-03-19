@@ -30,7 +30,6 @@ class CycleTimerRelay {
         CycleTimerRelay(uint8_t, unsigned long, unsigned long, uint8_t);
 
         void    process ();
-//        uint8_t state () { return _reverseState ? _state : !_state; }
         uint8_t state () { return _state; }
 
         char*   name () { return _name; }
@@ -38,6 +37,13 @@ class CycleTimerRelay {
 
         uint8_t reverse ();
         uint8_t reverse (uint8_t);
+
+        unsigned long onTime () { return _onTime; }
+        unsigned long onTime (unsigned long time) { _onTime = time; return _onTime; }
+
+        unsigned long offTime () { return _offTime; }
+        unsigned long offTime (unsigned long time) { _offTime = time; return _offTime; }
+
 };
 
 #endif

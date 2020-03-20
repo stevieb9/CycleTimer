@@ -1,10 +1,14 @@
 #include "CycleTimerRelay.h"
 
+#define RELAY_PIN   2
+#define ON_MILLIS   5000
+#define OFF_MILLIS  1000
+
 /* Normal constructor */
-CycleTimerRelay ctr(2, 5000, 1000); // Pin, Start Millis, End Millis
+CycleTimerRelay ctr(RELAY_PIN, ON_MILLIS, OFF_MILLIS);
 
 /* No pin constructor */
-//CycleTimerRelay ctr(5000, 1000); // Pin, Start Millis, End Millis
+//CycleTimerRelay ctr(ON_MILLIS, OFF_MILLIS);
 
 void setup() {
     /* Optionally set a name for the object */
@@ -32,13 +36,12 @@ void loop() {
     unsigned long onTime  = ctr.onTime();
     unsigned long offTime = ctr.offTime();
 
-    ctr.onTime(5000);
-    ctr.offTime(1000);
+    ctr.onTime(ON_MILLIS);
+    ctr.offTime(OFF_MILLIS);
 
     /* Get/set the relay pin */
-
     int8_t = ctr.pin();
-    //ctr.pin(2);
+    //ctr.pin(RELAY_PIN);
 
     /* Disable the relay */
     //ctr.pin(-1);

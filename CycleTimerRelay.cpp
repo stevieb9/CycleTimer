@@ -5,22 +5,10 @@
 
 /* Default Constructor */
 
-CycleTimerRelay::CycleTimerRelay (uint8_t pin, unsigned long onTime, unsigned long offTime) {
+CycleTimerRelay::CycleTimerRelay (int8_t pin, unsigned long onTime, unsigned long offTime) {
     _pin = pin;
     _onTime = onTime;
     _offTime = offTime;
-}
-
-/* Reverse ON/OFF State Constructor */
-
-CycleTimerRelay::CycleTimerRelay (uint8_t pin, unsigned long onTime, unsigned long offTime, uint8_t reverseState) {
-    _pin = pin;
-    _onTime = onTime;
-    _offTime = offTime;
-
-    _reverseState = true; 
-    _on = LOW;
-    _off = HIGH;
 }
 
 /* No Pin Constructor */
@@ -30,20 +18,20 @@ CycleTimerRelay::CycleTimerRelay (unsigned long onTime, unsigned long offTime) {
     _offTime = offTime;
 }
 
-/* No Pin Constructor with Reverse*/
-
-CycleTimerRelay::CycleTimerRelay (unsigned long onTime, unsigned long offTime, uint8_t reverseState) {
-    _onTime = onTime;
-    _offTime = offTime;
-
-    _reverseState = true; 
-    _on = LOW;
-    _off = HIGH;
-}
-
 /* METHODS */
 
-uint8_t CycleTimerRelay::reverse () { 
+uint8_t CycleTimerRelay::reverse (uint8_t set) {
+
+    if (set) {
+        _pin = pin;
+        _onTime = onTime;
+        _offTime = offTime;
+
+        _reverseState = true; 
+        _on = LOW;
+        _off = HIGH;
+    }
+
     return _reverseState;
 }
 

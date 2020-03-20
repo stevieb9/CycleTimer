@@ -25,16 +25,10 @@ class CycleTimerRelay {
 
     public:
         /* Relay pin; On time; Off time */
-        CycleTimerRelay(uint8_t, unsigned long, unsigned long);
+        CycleTimerRelay(int8_t, unsigned long, unsigned long);
  
-        /* Relay pin; On time; Off time; Reverse */
-        CycleTimerRelay(uint8_t, unsigned long, unsigned long, uint8_t);
-
         /* No relay pin */
         CycleTimerRelay(unsigned long, unsigned long);
-
-        /* No relay pin with reverse */
-        CycleTimerRelay(unsigned long, unsigned long, uint8_t);
 
         void    process ();
         uint8_t state () { return _state; }
@@ -42,7 +36,7 @@ class CycleTimerRelay {
         char*   name () { return _name; }
         char*   name (char* name) { _name = name; }
 
-        uint8_t reverse ();
+        uint8_t reverse () { return _reverseState; }
         uint8_t reverse (uint8_t);
 
         unsigned long onTime () { return _onTime; }

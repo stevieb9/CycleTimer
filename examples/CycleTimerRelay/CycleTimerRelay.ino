@@ -38,4 +38,12 @@ void loop() {
 
     ctr.onTime(5000);
     ctr.offTime(1000);
+
+    // Get/set the relay pin
+
+    int8_t = ctr.pin();
+    //ctr.pin(2);
+
+    // Disable the relay
+    //ctr.pin(-1);
 }

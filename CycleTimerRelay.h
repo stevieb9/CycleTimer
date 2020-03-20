@@ -15,8 +15,9 @@ class CycleTimerRelay {
         uint8_t _on             = HIGH;
         uint8_t _off            = LOW;
         uint8_t _state          = _on;
-        char* _name             = "";
-        uint8_t       _pin      = -1;
+
+        char*         _name     = "";
+        int8_t        _pin      = -1;
         unsigned long _onTime   = 0;
         unsigned long _offTime  = 0;
 
@@ -50,8 +51,8 @@ class CycleTimerRelay {
         unsigned long offTime () { return _offTime; }
         unsigned long offTime (unsigned long time) { _offTime = time; return _offTime; }
 
-        uint8_t pin () { return _pin; }
-        uint8_t pin (uint8_t pin) { _pin = pin; return _pin; }
+        int8_t pin () { return _pin; }
+        int8_t pin (int8_t pin) { _pin = pin; return _pin; }
 };
 
 #endif

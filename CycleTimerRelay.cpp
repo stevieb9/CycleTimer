@@ -23,10 +23,6 @@ CycleTimerRelay::CycleTimerRelay (unsigned long onTime, unsigned long offTime) {
 uint8_t CycleTimerRelay::reverse (uint8_t set) {
 
     if (set) {
-        _pin = pin;
-        _onTime = onTime;
-        _offTime = offTime;
-
         _reverseState = true; 
         _on = LOW;
         _off = HIGH;

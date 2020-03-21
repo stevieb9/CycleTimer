@@ -8,8 +8,8 @@ set(${PROJECT_NAME}_BOARD uno)
 project(${PROJECT_NAME})
 
 # Define additional source and header files or default arduino sketch files
-set(${PROJECT_NAME}_SRCS cycle_timer_relay_test.cpp cycle_timer_relay.cpp)
-set(${PROJECT_NAME}_HDRS cycle_timer_relay.h)
+set(${PROJECT_NAME}_SRCS CycleTimerRelay.cpp)
+set(${PROJECT_NAME}_HDRS CycleTimerRelay.h)
 
 ### Additional static libraries to include in the target.
 # set(${PROJECT_NAME}_LIBS)
@@ -36,7 +36,8 @@ set(${PROJECT_NAME}_PROGRAMMER avrispmkii)
 ## Verbose build process
 # set(${PROJECT_NAME}_AFLAGS -v)
 
-generate_arduino_firmware(${PROJECT_NAME})
+#generate_arduino_firmware(${PROJECT_NAME})
+generate_arduino_library(${PROJECT_NAME})
 
 
 print_board_list()

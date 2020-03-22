@@ -1,16 +1,10 @@
 #include "Arduino.h"
 #include "CycleTimerRelay.h"
 
-/* CONSTRUCTORS */
-
-/* Default Constructor */
-
 CycleTimerRelay::CycleTimerRelay (int8_t pin, unsigned long onTime, unsigned long offTime) : ArduinoRelay(pin) {
     _onTime = onTime;
     _offTime = offTime;
 }
-
-/* No Pin Constructor */
 
 CycleTimerRelay::CycleTimerRelay (unsigned long onTime, unsigned long offTime) : ArduinoRelay() {
     _onTime = onTime;

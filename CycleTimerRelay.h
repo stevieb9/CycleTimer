@@ -9,6 +9,7 @@ using namespace std;
 class CycleTimerRelay : public ArduinoRelay {
 
     private:
+        uint8_t       _init     = false;
         unsigned long _onTime   = 0;
         unsigned long _offTime  = 0;
         unsigned long _pMillis  = 0;
@@ -17,6 +18,9 @@ class CycleTimerRelay : public ArduinoRelay {
         CycleTimerRelay(int8_t pin, unsigned long onTime, unsigned long offTime);
         CycleTimerRelay(unsigned long onTime, unsigned long offTime);
 
+        uint8_t init () { return _init; }
+        uint8_t init (uint8_t init) { _init = init; return _init; }
+        
         unsigned long prevMillis () { return _pMillis; }
         unsigned long prevMillis (unsigned long millis) { _pMillis = millis; return _pMillis; }
 

@@ -11,9 +11,6 @@ CycleTimerRelay ctr(RELAY_PIN, ON_MILLIS, OFF_MILLIS);
 //CycleTimerRelay ctr(ON_MILLIS, OFF_MILLIS);
 
 void setup() {
-    /* Optionally set a name for the object */
-    ctr.name("CTR");
-
     /* Reverse: On = LOW, Off = HIGH */
     //ctr.reverse(true);
 }
@@ -29,9 +26,6 @@ void loop() {
     /* Check reverse state */
     bool reversed = ctr.reverse();
     
-    /* Get the name of the object */
-    char* name = ctr.name();
-
     /* Get the on or off times */
     unsigned long onTime  = ctr.onTime();
     unsigned long offTime = ctr.offTime();
